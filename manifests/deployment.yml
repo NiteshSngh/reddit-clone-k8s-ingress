@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sprod-689a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sprod-689a"
+  template:
+    metadata:
+      labels:
+        app: "k8sprod-689a"
+    spec:
+      containers:
+        - name: "k8sprod-689a"
+          image: "newcont123.azurecr.io/k8sprod"
+          ports:
+          - containerPort: 3000
